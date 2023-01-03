@@ -115,6 +115,37 @@ impl Universe {
     pub fn cells(&self) -> *const Cell {
         self.cells.as_ptr()
     }
+
+    /// 设置宇宙的宽
+    ///
+    /// 把全部细胞重置为`Dead`状态
+    pub fn set_width(&mut self, width: u32) {
+        self.width = width;
+        self.cells = (0..width * self.height).map(|_i| Cell::Dead).collect();
+    }
+
+    /// 设置宇宙的高
+    ///
+    /// 把全部细胞重置为`Dead`状态
+    pub fn set_height(&mut self, height: u32) {
+        self.height = height;
+        self.cells = (0..self.width * height).map(|_i| Cell::Dead).collect();
+    }
+}
+
+impl Universe {
+    /// 获取宇宙细胞的引用
+    pub fn get_cells(&self) -> &[Cell] {
+        &self.cells
+    }
+
+    /// 通过行和列，设置宇宙细胞为存活状态
+    pub fn set_cells(&mut self, cells: &[(u32, u32)]) {
+        for (row, col) in cells.iter().cloned() {
+            let idx = self.get_index(row, col);
+            self.cells[idx] = Cell::Alive;
+        }
+    }
 }
 
 impl fmt::Display for Universe {
