@@ -22,7 +22,7 @@
     "webpack"
   ],
   "author": "coderduan <1961018000@qq.com>",
-  "license": "(MIT OR Apache-2.0)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rustwasm/create-wasm-app/issues"
   },
