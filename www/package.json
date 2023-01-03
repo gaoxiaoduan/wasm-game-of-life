@@ -20,17 +20,20 @@
     "rust",
     "webpack"
   ],
-  "author": "Ashley Williams <ashley666ashley@gmail.com>",
+  "author": "coderduan <1961018000@qq.com>",
   "license": "(MIT OR Apache-2.0)",
   "bugs": {
     "url": "https://github.com/rustwasm/create-wasm-app/issues"
   },
   "homepage": "https://github.com/rustwasm/create-wasm-app#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^5.0.0",
     "hello-wasm-pack": "^0.1.0",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5",
-    "copy-webpack-plugin": "^5.0.0"
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "wasm-game-of-life-coderduan": "^0.1.0"
   }
 }
